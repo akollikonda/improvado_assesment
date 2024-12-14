@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: marketing_data
+    schema: landing  
+    tables:
+      - name: raw_campaigns
+        description: "Raw data for campaigns with campaign ID, name, and channel."
+      - name: raw_ad_spend
+        description: "Raw data for ad spend with daily spend amounts by campaign."
+      - name: raw_conversions
+        description: "Raw data for conversions with daily conversion counts by campaign."

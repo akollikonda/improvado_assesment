@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_conversions
+    description: "Staging model for conversions data, cleaned and standardized."
+    columns:
+      - name: campaign_id
+        description: "Unique identifier for the campaign."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_campaigns')  # Ensures it maps to a valid campaign_id in stg_campaigns
+              field: campaign_id
+      - name: date
+        description: "Date of the conversion record."
+        tests:
+          - not_null
+      - name: conversions
+        description: "Number of conversions on the given date."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0

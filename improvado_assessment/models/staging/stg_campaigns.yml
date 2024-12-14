@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_campaigns
+    description: "Staging model for campaigns, cleaned and standardized."
+    columns:
+      - name: campaign_id
+        description: "Unique identifier for each campaign."
+        tests:
+          - unique
+          - not_null
+      - name: campaign_name
+        description: "Standardized name of the campaign."
+        tests:
+          - not_null
+      - name: channel
+        description: "Standardized marketing channel."
+        tests:
+          - not_null
