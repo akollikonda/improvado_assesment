@@ -31,6 +31,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   improvado_assessment:
-    # Config indicated by + and applies to all files under models/example/
-    example:
+    +schema: landing  # Default schema is `landing`
+    staging:  # Configure staging models to use the `staging` schema
+      +schema: staging
       +materialized: view
