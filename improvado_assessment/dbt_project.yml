@@ -32,6 +32,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   improvado_assessment:
     +schema: landing  # Default schema is `landing`
-    staging:  # Configure staging models to use the `staging` schema
+    staging:  
       +schema: staging
       +materialized: view
+    facts:  
+      +schema: analytics
+      +materialized: table
+    dimensions:  
+      +schema: analytics
+      +materialized: table
