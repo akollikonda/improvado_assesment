@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: fct_campaign_performance
+    description: "Fact table for campaign performance, containing aggregated metrics like spend, conversions, conversion rate, and ROAS (Return on Ad Spend)."
+    columns:
+      - name: campaign_id
+        description: "Unique identifier for each campaign."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_campaigns')  
+              field: campaign_id
+      - name: date
+        description: "Date of the campaign performance record."
+        tests:
+          - not_null
+      - name: spend
+        description: "Total spend on the campaign for the given date."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0  
+      - name: conversions
+        description: "Number of conversions achieved for the campaign on the given date."
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0  
+      - name: conversion_rate
+        description: "Conversion rate calculated as conversions / spend."
+        tests:
+          - not_null
+      - name: roas
+        description: "Return on Ad Spend (ROAS), calculated as (conversions * 100) / spend."
+        tests:
+          - not_null

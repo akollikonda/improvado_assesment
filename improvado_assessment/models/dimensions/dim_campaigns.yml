@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_campaigns
+    description: "Dimension table for campaigns, containing campaign-related attributes like campaign name, channel, and start/end dates."
+    columns:
+      - name: campaign_id
+        description: "Unique identifier for each campaign."
+        tests:
+          - unique
+          - not_null
+      - name: campaign_name
+        description: "Name of the campaign."
+        tests:
+          - not_null
+      - name: channel
+        description: "Marketing channel associated with the campaign."
+        tests:
+          - not_null
