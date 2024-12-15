@@ -3,5 +3,5 @@ VALUES
     ('Campaign A', 'Google Ads'),
     ('Campaign B', 'Facebook Ads'),
     ('Campaign C', 'Instagram'),
-    ('Campaign D', 'Google Ads'),
-    ('Campaign E', 'Facebook Ads');
+    ('Campaign D', 'Tiktok Ads'),
+    ('Campaign E', 'Newpaper Ads');
