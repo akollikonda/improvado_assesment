@@ -85,11 +85,12 @@ Tests were implemented to ensure data integrity:
 ---
 
 ## Analysis Summary
+- **Which channel has the highest Return on Ad Spend (ROAS)?** The analysis reveals that Google Ads has the highest ROAS, making it the most efficient channel for driving returns relative to spend.
 The analysis identified:
 - **Top-performing campaigns** with high ROAS and conversions.
 - **Channels with highest ROAS** (e.g., Google Ads, Facebook).
 - Opportunities for optimizing **underperforming campaigns**.
-- Seasonal trends and daily patterns in spend and conversions.
+- Seasonal trends and daily patterns in spend and conversions. Additionally, there were no campaigns identified with decreasing performance over the last two weeks compared to the first two weeks of the analysis period.
 
 ---
 
@@ -102,6 +103,9 @@ The analysis identified:
 ---
 
 ## Files and Artifacts
+1. **Scripts**:
+   - The create and insert scripts for tables are located in the `Scripts` folder.
+
 1. **dbt Project**:
    - The dbt project is located in the `improvado_assessment` folder.
    - Includes raw, staging, fact, and dimension models.
